@@ -5,25 +5,28 @@
     <title>English Tochka</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="normalize.css">
+    <link href="http://fonts.cdnfonts.com/css/museo-sans-cyrl" rel="stylesheet">
 </head>
 <body>
 <div class="container">
-    <div class="main">
+    <main class="main-content">
         <div class="balance">
             <h3 class="balance__heading">Ваш баланс:</h3>
-            <div class="balance__money money money_primary">
-                <span class="money__value money__value_primary">34</span>
-                <img class="money__icon money__icon_primary" src="images/icon-et.png" alt="ET" width="46" height="38">
+            <div class="money balance__money">
+                <span class="money__value money__value_balance">34</span>
+                <img class="money__icon money__icon_balance" src="images/icon-et.png" alt="ET" width="46" height="38">
             </div>
         </div>
         <div class="options">
-            <h3 class="options__heading">Варианты обмена на скидку</h3>
-            <button href="options__instruction-button">Инструкция</button>
+            <div class="option__top">
+                <h3 class="options__heading">Варианты обмена на скидку</h3>
+                <button class="options__instruction-button">Инструкция</button>
+            </div>
             <ul class="options__list options-list">
                 <li class="options-list__item options-item options-item_calls">
-                    <div class="options-item__money money money_secondary">
-                        <span class="money__value money__value_secondary">50</span>
-                        <img class="money__icon money__icon_secondary" src="images/icon-et.png" alt="ET" width="15"
+                    <div class="money options-item__money">
+                        <span class="money__value money__value_option-item">50</span>
+                        <img class="money__icon money__icon_option-item" src="images/icon-et.png" alt="ET" width="15"
                              height="13">
                     </div>
                     <p class="options-item__subject">
@@ -37,8 +40,8 @@
                              height="13">
                     </div>
                     <p class="options-item__subject">
-                        <span class="options-item__discount">50%</span>на спецкурс</p>
-                    <button class="options-item__button options-item__button_disabled">Использовать скидку</button>
+                        <span class="options-item__discount">30%</span>на спецкурс</p>
+                    <button class="options-item__button">Использовать скидку</button>
                 </li>
                 <li class="options-list__item options-item options-item_course">
                     <div class="options-item__money money money_secondary">
@@ -48,7 +51,7 @@
                     </div>
                     <p class="options-item__subject">
                         <span class="options-item__discount">50%</span>на курс</p>
-                    <button class="options-item__button options-item__button_disabled">Использовать скидку</button>
+                    <button class="options-item__button">Использовать скидку</button>
                 </li>
                 <li class="options-list__item options-item options-item_course">
                     <div class="options-item__money money money_secondary">
@@ -58,14 +61,14 @@
                     </div>
                     <p class="options-item__subject">
                         <span class="options-item__discount">65%</span>на курс</p>
-                    <button class="options-item__button options-item__button_disabled">Использовать скидку</button>
+                    <button class="options-item__button">Использовать скидку</button>
                 </li>
             </ul>
         </div>
-    </div>
-    <div class="modal-instruction">
+    </main>
+    <div class="modal-instruction visually-hidden">
         <div class="modal-instruction__content">
-            <button class="modal-instruction__close-button"></button>
+            <button class="modal-instruction__close-button">закрыть</button>
             <h2 class="modal-instruction__heading">Инструкция</h2>
             <p class="modal-instruction__text">
                 После публикации сделайте скрин, что вы его написали и отправьте своему куратору, чтобы мы добавили вам
