@@ -1,0 +1,65 @@
+@media screen and (max-width: 1280px) {
+    .main-content {
+        justify-content: space-around;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .balance {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 802px;
+        min-height: 60px;
+        margin-bottom: 10px;
+    }
+
+    .balance__heading {
+        margin-bottom: 0;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .options {
+        width: 90%;
+    }
+
+    .balance {
+        width: 90%;
+    }
+
+    .options-list {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .options-item {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .balance__money {
+        padding-left: 35px;
+        font-size: 30px;
+        line-height: 30px;
+        background-size: 30px;
+    }
+
+    .money__icon_balance {
+        width: 25px;
+        height: 25px;
+    }
+
+    .options__heading {
+        font-size: 18px;
+    }
+}
