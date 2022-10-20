@@ -7,14 +7,14 @@
 
 @font-face {
     font-family: MuseoSansCyrl;
-    font-weight: 500;
+    font-weight: 400;
     src: local('MuseoSansCyrl-500'),
     url('../fonts/MuseoSansCyrl-500.ttf');
 }
 
 @font-face {
     font-family: MuseoSansCyrl;
-    font-weight: 700;
+    font-weight: 600;
     src: local('MuseoSansCyrl-700'),
     url('../fonts/MuseoSansCyrl-700.ttf');
 }

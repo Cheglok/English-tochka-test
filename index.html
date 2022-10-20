@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>English Tochka</title>
-    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/mobile.css">
-    <link href="http://fonts.cdnfonts.com/css/museo-sans-cyrl" rel="stylesheet">
 </head>
 <body>
 <div class="container">
@@ -15,7 +14,7 @@
         <div class="balance">
             <h3 class="balance__heading">Ваш баланс:</h3>
             <div class="money balance__money">
-                <span class="money__value money__value_balance">34</span>
+                <span class="money__value money__value_balance">?</span>
                 <img class="money__icon money__icon_balance" src="images/icon-et.png" alt="ET" width="46" height="38">
             </div>
         </div>
@@ -68,8 +67,16 @@
             </ul>
         </div>
     </main>
+    <form action="" id="form" name="form">
+        <label>Введите логин
+        <input type="text" name="login" value="test2">
+        </label>
+        <button type="submit" id="submitButton">Войти</button>
+    </form>
+    <ul class="user-info options-list" id="user-info">
+        content
+    </ul>
     <div class="modal-instruction visually-hidden">
-        <!-- <div class="modal-instruction"> -->
         <div class="modal-instruction__content">
             <button class="modal-instruction__close-button">закрыть</button>
             <h2 class="modal-instruction__heading">Инструкция</h2>
@@ -89,6 +96,6 @@
     </div>
 </div>
 
-<script src="script.js"></script>
+<script src="scripts/script.js"></script>
 </body>
 </html>
