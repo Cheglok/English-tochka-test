@@ -1,20 +1,17 @@
-// Import function from User Model
-import { getUsers, getUserByLogin, getUserCoinsByLogin } from "../models/userModel.js";
+import { getUserByLogin, getUserOptionsByLogin, getUserCoinsByLogin } from "../models/userModel.js";
 
-// Get All Users
-export const showUsers = (req, res) => {
-    getUsers((err, results) => {
+export const showUserByLogin = (req, res) => {
+    getUserByLogin(req.params.login, (err, results) => {
         if (err){
             res.send(err);
         }else{
             res.json(results);
         }
-    });
+    })
 }
 
-// Get Single User
-export const showUserByLogin = (req, res) => {
-    getUserByLogin(req.params.login, (err, results) => {
+export const showUserOptionsByLogin = (req, res) => {
+    getUserOptionsByLogin(req.params.login, (err, results) => {
         if (err){
             res.send(err);
         }else{

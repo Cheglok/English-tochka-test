@@ -3,6 +3,7 @@ let user = {};
 let user_id = null;
 let user_coins = null;
 let userSpentMoney = 0;
+let user_login = '';
 
 async function byuOption(url= '', data = {}) {
     const response = await fetch(url, {
@@ -31,7 +32,7 @@ const buy = (e) => {
             user_id: user_id
         };
         byuOption(url, data).then(() => {
-            freshUserInfo();
+            freshUserInfo(user_login);
         });
     }
 }
@@ -61,12 +62,28 @@ const checkBoughtOptions = (list) => {
     })
 }
 
-const renderUserCoins = (coins) => {
+const renderUserDetails = (coins, login) => {
     document.querySelector('.money__value_balance').textContent = coins;
+    document.querySelector('.main-header').innerHTML = `<h3>Добро пожаловать ${login}</h3>
+           <a href="index.html">выйти</a>`;
+}
+
+const checkUser = async (login) => {
+    await fetch(`http://localhost:5000/users/${login}`)
+        .then((resp) => resp.json())
+        .then((data) => {
+            if(!data[0]) {
+                alert('Пользователь не найден');
+                return false;
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        });
 }
 
 const getUserOptions = async (login) => {
-    await fetch(`http://localhost:5000/users/${login}`)
+    await fetch(`http://localhost:5000/users/options/${login}`)
         .then((resp) => resp.json())
         .then((data) => {
             checkBoughtOptions(data);
@@ -81,8 +98,9 @@ const getUserCoins = async (login) => {
         .then((resp) => resp.json())
         .then((data) => {
             user_id = data.user_id;
+            user_login = data.login;
             user_coins = data.coins_count - userSpentMoney;
-            renderUserCoins(user_coins);
+            renderUserDetails(user_coins, user_login);
         })
         .catch((error) => {
             console.log(error);
@@ -91,7 +109,7 @@ const getUserCoins = async (login) => {
 
 const freshUserInfo = (login) => {
     userSpentMoney = 0;
-    getUserOptions(login).then(() => getUserCoins(login));
+    checkUser(login).then(() => getUserOptions(login).then(() => getUserCoins(login)));
 }
 
 function selectImage(description) {
@@ -146,8 +164,26 @@ const getProducts = async () => {
         });
 }
 
+const createHandlers = () => {
+    let instructionOpen = document.querySelector('.options__instruction-button');
+    instructionOpen.addEventListener('click', showInstruction);
+    let closeInstruction = document.querySelector('.modal-instruction__close-button');
+    closeInstruction.addEventListener('click', hideInstruction);
+};
+
+const showInstruction = () => {
+    let instruction = document.querySelector('.modal-instruction');
+    instruction.classList.remove('visually-hidden');
+}
+
+const hideInstruction = () => {
+    let instruction = document.querySelector('.modal-instruction');
+    instruction.classList.add('visually-hidden');
+}
+
 const init = () => {
     getProducts();
+    createHandlers();
     let form = document.querySelector('#form');
     form.onsubmit = (e) => {
         e.preventDefault();
