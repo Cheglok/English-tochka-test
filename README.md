@@ -11,3 +11,5 @@ fetch, async await, страница работает без перезагру�
 Чтобы развернуть сервер в папке backend запустить npm install
 
 Для запуска сервера из корневой директории команда node backend/index.js
+
+![desctop](https://raw.githubusercontent.com/Cheglok/English-tochka-test/main/non-project%20files/projectPreview.gif)
