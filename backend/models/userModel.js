@@ -36,7 +36,7 @@ export const getUserByLogin = (login, result) => {
 }
 
 export const getUserCoinsByLogin = (login, result) => {
-    db.query("SELECT coins_count FROM users \n" +
+    db.query("SELECT coins_count, user_id, login FROM users \n" +
         "JOIN (SELECT user_id, SUM(price) AS coins_count FROM \n" +
         "(SELECT DISTINCT user_id, price, action FROM english_tochka.coins) AS unique_actions\n" +
         "GROUP BY user_id) AS coins ON users.id = user_id WHERE login = ?;", [login], (err, results) => {
@@ -48,5 +48,3 @@ export const getUserCoinsByLogin = (login, result) => {
         }
     });
 }
-
-// SELECT user_id, SUM(price) from (SELECT distinct user_id, price, action FROM english_tochka.coins) as unique_actions group by user_id;

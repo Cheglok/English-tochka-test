@@ -2,7 +2,7 @@
 import express from "express";
 
 // import function from controller
-import { showProducts, showProductById } from "../controllers/product.js";
+import {showProducts, showProductById, createOrder} from "../controllers/product.js";
 import {showUsers, showUserByLogin, showUserCoinsByLogin} from "../controllers/user.js";
 
 // init express router
@@ -21,5 +21,7 @@ router.get('/users', showUsers);
 router.get('/users/:login', showUserByLogin);
 
 router.get('/users/coins/:login', showUserCoinsByLogin);
+
+router.post('/orders', createOrder)
 
 export default router;

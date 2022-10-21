@@ -218,3 +218,32 @@
 .modal-instruction__text {
     margin-bottom: 27px;
 }
+
+.main-header {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.login-form__label {
+    padding: 5px 20px;
+    margin-bottom: 10px;
+}
+
+.login-form__input {
+    margin: 0 20px 20px 20px;
+    padding: 5px 10px;
+    border: 2px solid #FECE00;
+    border-radius: 5px;
+}
+
+.login-form__button {
+    width: 135px;
+    height: 42px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 600;
+    background: #FECE00;
+}

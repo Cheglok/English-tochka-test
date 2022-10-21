@@ -10,6 +10,14 @@
 </head>
 <body>
 <div class="container">
+    <header class="main-header">
+        <form action="" id="form" name="form" class="main-header__form login-form">
+            <label for="login" class="login-form__label">Введите логин</label>
+                <input id="login" class="login-form__input" type="text" name="login" value="test2">
+
+            <button class="login-form__button" type="submit" id="submitButton">Войти</button>
+        </form>
+    </header>
     <main class="main-content">
         <div class="balance">
             <h3 class="balance__heading">Ваш баланс:</h3>
@@ -32,7 +40,7 @@
                     </div>
                     <p class="options-item__subject">
                         <span class="options-item__discount">50%</span>на звонки ST (x2)</p>
-                    <button class="options-item__button options-item__button_disabled">Уже использовано</button>
+                    <button class="options-item__button">Уже использовано</button>
                 </li>
                 <li class="options-list__item options-item options-item_special-course">
                     <div class="options-item__money money money_secondary">
@@ -67,15 +75,6 @@
             </ul>
         </div>
     </main>
-    <form action="" id="form" name="form">
-        <label>Введите логин
-        <input type="text" name="login" value="test2">
-        </label>
-        <button type="submit" id="submitButton">Войти</button>
-    </form>
-    <ul class="user-info options-list" id="user-info">
-        content
-    </ul>
     <div class="modal-instruction visually-hidden">
         <div class="modal-instruction__content">
             <button class="modal-instruction__close-button">закрыть</button>
